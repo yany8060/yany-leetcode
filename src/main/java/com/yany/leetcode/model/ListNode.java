@@ -1,4 +1,4 @@
-package com.yany.leetcode.util;
+package com.yany.leetcode.model;
 
 /**
  * @author yanyong on 2018/11/26
