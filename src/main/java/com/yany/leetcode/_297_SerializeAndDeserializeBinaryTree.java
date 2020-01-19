@@ -1,19 +1,15 @@
-package com.yany.leetcode.hard;
+package com.yany.leetcode;
 
-import com.sun.deploy.util.StringUtils;
 import com.yany.leetcode.model.TreeNode;
 
-import java.io.ByteArrayInputStream;
-import java.util.Arrays;
 import java.util.Stack;
-import java.util.Vector;
 
 /**
  * https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
  *
  * @author yanyong on 2019/6/10
  */
-public class SerializeAndDeserializeBinaryTree_297 {
+public class _297_SerializeAndDeserializeBinaryTree {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);

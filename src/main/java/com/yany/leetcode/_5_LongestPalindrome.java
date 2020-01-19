@@ -1,4 +1,4 @@
-package com.yany.leetcode.medium;
+package com.yany.leetcode;
 
 
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author yanyong on 2018/12/5
  */
-public class LongestPalindromicSubstring_5 {
+public class _5_LongestPalindrome {
 
     public String longestPalindrome(String s) {
 

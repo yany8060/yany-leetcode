@@ -1,4 +1,4 @@
-package com.yany.leetcode.easy;
+package com.yany.leetcode;
 
 /**
  * @author yanyong on 2019/3/25

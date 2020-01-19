@@ -1,4 +1,4 @@
-package com.yany.leetcode.medium;
+package com.yany.leetcode;
 
 import java.awt.*;
 
@@ -7,7 +7,7 @@ import java.awt.*;
  *
  * @author yanyong on 2019/6/4
  */
-public class DecodeAtIndex_880 {
+public class _880_DecodeAtIndex {
 
 
     public static void main(String[] args) {

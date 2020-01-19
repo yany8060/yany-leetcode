@@ -1,4 +1,4 @@
-package com.yany.leetcode.medium;
+package com.yany.leetcode;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,10 +6,10 @@ import java.util.Set;
 /**
  * @author yanyong on 2018/11/27
  */
-public class LongestSubstringWithoutRepeatingCharacters_3 {
+public class _3_LongestSubstringWithoutRepeatingCharacters {
 
     public static void main(String[] args) {
-        new LongestSubstringWithoutRepeatingCharacters_3().lengthOfLongestSubstring("xxxabcc");
+        new _3_LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("xxxabcc");
 
 //        LinkedList<String> linkedList = new LinkedList<>(Arrays.<String>asList("cc"));
 //        System.out.println(linkedList.getFirst());

@@ -1,4 +1,4 @@
-package com.yany.leetcode.medium;
+package com.yany.leetcode;
 
 /**
  * You are given coins of different denominations and a total amount of money.
@@ -14,14 +14,9 @@ package com.yany.leetcode.medium;
  * 5=2+1+1+1
  * 5=1+1+1+1+1
  *
- * @author yanyong on 2019/3/3
+ * @author yanyong on 2020/1/9
  */
-public class CoinChange2 {
-
-    public static void main(String[] args) {
-
-    }
-
+public class _518_CoinChange2 {
 
     public static int change(int amount, int[] coins) {
         int n = 0;
@@ -44,4 +39,5 @@ public class CoinChange2 {
 
         return n;
     }
+
 }

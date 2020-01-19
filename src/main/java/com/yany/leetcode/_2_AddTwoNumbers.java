@@ -1,11 +1,11 @@
-package com.yany.leetcode.medium;
+package com.yany.leetcode;
 
 import com.yany.leetcode.model.ListNode;
 
 /**
  * @author yanyong on 2018/11/26
  */
-public class ElementaryMath_2 {
+public class _2_AddTwoNumbers {
     public static void main(String[] args) {
         ListNode d = new ListNode(1);
         ListNode cd = d;
