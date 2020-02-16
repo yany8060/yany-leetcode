@@ -1,37 +1,54 @@
 package com.yany.leetcode;
 
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 /**
+ * 最长回文字符串
+ * 动态规范法：
+ * <p>
+ * dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i+1][j-1])
+ *
  * @author yanyong on 2018/12/5
  */
 public class _5_LongestPalindrome {
+    public static void main(String[] args) {
+        System.out.println(new _5_LongestPalindrome().longestPalindrome2(""));
+    }
 
     public String longestPalindrome(String s) {
+        String res = "";
+        int n = s.length();
+        boolean[][] dp = new boolean[n][n];
 
-        LinkedList<Character> list = new LinkedList<>();
-        for (int i = 0; i < s.length(); i++) {
-            list.add(s.charAt(i));
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = i; j < n; j++) {
+                dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1]);
 
-            if (s.contains(convert(list))) {
-                list.addLast(s.charAt(i));
-            } else {
-                list.removeFirst();
+                if (dp[i][j] && (res == null || res.length() < (j - i + 1))) {
+                    res = s.substring(i, j + 1);
+                }
+            }
+        }
+        return res;
+    }
+
+    public String longestPalindrome2(String s) {
+        String res = "";
+        int n = s.length();
+        boolean[][] dp = new boolean[n][n];
+
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                dp[i][j] = s.charAt(i) == s.charAt(j) && (i - j < 3 || dp[i - 1][j + 1]);
+
+                if (dp[i][j] && (res == null || res.length() < (i - j + 1))) {
+                    res = s.substring(j, i + 1);
+                }
             }
         }
 
-        return "";
+        return res;
     }
 
-    public String convert(List<Character> x) {
-        StringBuffer sb = new StringBuffer();
-        for (int i = x.size() - 1; i >= 0; i--) {
-            sb.append(x.get(i));
-        }
-        return sb.toString();
-    }
 
 }
