@@ -1,6 +1,8 @@
 package com.yany.leetcode;
 
 /**
+ * 最长公共前缀
+ *
  * @author yanyong on 2020/2/10
  */
 public class _14_LongestCommonPrefix {
@@ -29,4 +31,6 @@ public class _14_LongestCommonPrefix {
             prefix.append(tmp);
         }
     }
+
+
 }

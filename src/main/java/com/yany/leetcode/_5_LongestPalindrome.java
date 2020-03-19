@@ -12,10 +12,15 @@ package com.yany.leetcode;
 public class _5_LongestPalindrome {
     public static void main(String[] args) {
         System.out.println(new _5_LongestPalindrome().longestPalindrome2(""));
+
+
+        String s = "abcdefg";
+
+        System.out.println(s.substring(1, 3));
     }
 
     public String longestPalindrome(String s) {
-        String res = "";
+        String res = null;
         int n = s.length();
         boolean[][] dp = new boolean[n][n];
 
