@@ -3,7 +3,7 @@ package com.yany.swordoffer;
 /**
  * @author yanyong on 2020/3/19
  */
-public class __14_MaxProductAfterCutting {
+public class _14_MaxProductAfterCutting {
 
     public int maxProductAfterCutting(int length) {
         if (length < 2) {
