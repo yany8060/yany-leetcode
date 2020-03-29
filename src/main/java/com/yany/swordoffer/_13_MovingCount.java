@@ -9,7 +9,7 @@ public class _13_MovingCount {
         boolean[] visited = new boolean[rows * cols];
         int count = movingCountCore(threshold, rows, cols, 0, 0, visited);
 
-        return 0;
+        return count;
     }
 
 
