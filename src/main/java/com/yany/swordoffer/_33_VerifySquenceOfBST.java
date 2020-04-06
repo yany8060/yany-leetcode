@@ -1,5 +1,8 @@
 package com.yany.swordoffer;
 
+/**
+ * 是否是后续遍历
+ */
 public class _33_VerifySquenceOfBST {
 
     public static void main(String[] args) {
