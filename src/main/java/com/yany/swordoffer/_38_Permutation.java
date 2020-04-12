@@ -5,10 +5,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class _38_Permutation {
-    public static void main(String[] args) {
-        System.out.println(new _38_Permutation().Permutation("abc"));
-    }
-
     public ArrayList<String> Permutation(String pStr) {
         ArrayList<String> list = new ArrayList<>();
         if (pStr == null || pStr.equals("")) {
@@ -16,6 +12,10 @@ public class _38_Permutation {
         }
         Permutation(pStr.toCharArray(), 0, list);
         return list;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new _38_Permutation().Permutation("abc"));
     }
 
     public void Permutation(char[] pStr, int begin, ArrayList<String> list) {
