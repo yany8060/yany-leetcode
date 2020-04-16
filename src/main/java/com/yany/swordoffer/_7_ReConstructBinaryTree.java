@@ -18,8 +18,6 @@ public class _7_ReConstructBinaryTree {
     }
 
     public TreeNode reConstructBinaryTree(int[] pre, int[] in, int rootNum) {
-
-
         TreeNode root = new TreeNode(pre[rootNum]);
         int rootInNum = -1;
         for (int i = 0; i < in.length; i++) {
