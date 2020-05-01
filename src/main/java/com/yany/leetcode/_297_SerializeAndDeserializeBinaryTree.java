@@ -1,6 +1,6 @@
 package com.yany.leetcode;
 
-import com.yany.leetcode.model.TreeNode;
+import com.yany.model.TreeNode;
 
 import java.util.Stack;
 

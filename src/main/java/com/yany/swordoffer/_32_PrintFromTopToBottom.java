@@ -1,7 +1,7 @@
 package com.yany.swordoffer;
 
 
-import com.yany.leetcode.model.TreeNode;
+import com.yany.model.TreeNode;
 
 import java.util.*;
 

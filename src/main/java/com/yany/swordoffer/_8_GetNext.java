@@ -1,6 +1,6 @@
 package com.yany.swordoffer;
 
-import com.yany.leetcode.model.TreeNode;
+import com.yany.model.TreeNode;
 
 public class _8_GetNext {
 
