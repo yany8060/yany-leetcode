@@ -11,7 +11,19 @@ import java.util.List;
 public class ListSort {
 
     public static void main(String[] args) {
+        ListNode a = null;
+        ListNode b = null;
+        test(a, b);
 
+        System.out.println(a.val);
+        System.out.println(b.val);
+    }
+
+
+    public static void test(ListNode a, ListNode b) {
+
+        a = new ListNode(1);
+        b = new ListNode(2);
 
     }
 
