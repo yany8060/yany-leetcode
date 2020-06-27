@@ -1,6 +1,6 @@
 package com.yany.leetcode;
 
-import com.yany.leetcode.model.ListNode;
+import com.yany.model.ListNode;
 
 /**
  * @author yanyong on 2020/3/10

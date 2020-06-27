@@ -11,7 +11,7 @@ package com.yany.leetcode;
  */
 public class _5_LongestPalindrome {
     public static void main(String[] args) {
-        System.out.println(new _5_LongestPalindrome().longestPalindrome2(""));
+        System.out.println(new _5_LongestPalindrome().longestPalindrome(""));
 
 
         String s = "abcdefg";

@@ -87,4 +87,53 @@ public class _54_SpiralMatrix {
         }
 
     }
+
+    public List<Integer> spiralOrder2(int[][] matrix) {
+        List<Integer> list = new ArrayList<>();
+        if (matrix == null) {
+            return list;
+        }
+
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int start = 0;
+        while (start * 2 < m && start * 2 < n) {
+            saveOneCircle(matrix, start, list);
+            start++;
+        }
+
+        return list;
+    }
+
+    private void saveOneCircle(int[][] matrix, int start, List<Integer> list) {
+        int m = matrix.length - start;
+        int n = matrix[0].length - start;
+
+        for (int i = start; i < n; i++) {
+            list.add(matrix[start][i]);
+        }
+
+
+        if ((m - 1) > start) {
+            for (int j = start; j < m; j++) {
+                list.add(matrix[j][n - 1]);
+            }
+        }
+
+        if ((n - 1) > start) {
+            for (int i = n - 1; i >= start; i++) {
+                list.add(matrix[m - 1][i]);
+            }
+        }
+        if ((m - 2) > start) {
+            for (int j = m - 2; j > start; j++) {
+                list.add(matrix[j][start]);
+            }
+        }
+
+
+    }
+
+
 }

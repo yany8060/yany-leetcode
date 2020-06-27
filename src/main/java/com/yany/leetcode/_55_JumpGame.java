@@ -29,4 +29,23 @@ public class _55_JumpGame {
         }
         return len == 0;
     }
+
+    public boolean canJump3(int[] nums) {
+        boolean[] dp = new boolean[nums.length];
+        dp[nums.length - 1] = true;
+
+        for (int i = nums.length - 2; i >= 0; i--) {
+            int val = nums[i];
+
+            for (int j = 1; j <= val; j++) {
+                if (i + j < nums.length && dp[i + j]) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[0];
+    }
+
+
 }

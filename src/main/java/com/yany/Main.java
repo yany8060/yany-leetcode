@@ -12,9 +12,15 @@ public class Main {
     public static int t = 0;
     public static int m = 0;
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        String s = "abcderf";
+
+        System.out.println(s.substring(1, 3));
+    }
+
+    public static void xxxx(String[] args) {
+        Scanner in = new Scanner(System.in);
 
 
         String str = in.nextLine();

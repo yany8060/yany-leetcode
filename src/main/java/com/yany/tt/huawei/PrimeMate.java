@@ -1,4 +1,4 @@
-package com.yany.huawei;
+package com.yany.tt.huawei;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
 package com.yany.swordoffer;
 
-import com.yany.leetcode.model.ListNode;
+import com.yany.model.ListNode;
 
 import java.util.ArrayList;
 
