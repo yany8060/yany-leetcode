@@ -1,38 +1,5 @@
 package com.yany.leetcode;
 
-<<<<<<< HEAD
-import com.yany.leetcode.model.ListNode;
-
-public class _24_SwapNodesInPairs {
-
-    public ListNode swapPairs(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-
-        ListNode retNode = new ListNode(0);
-        retNode.next = head;
-
-
-        ListNode hNode = new ListNode(0);
-        ListNode first = head;
-        ListNode second = head.next;
-        hNode.next = first;
-
-
-        while (second != null) {
-            hNode.next = second;
-            ListNode tmp = second.next;
-            second.next = first;
-            first.next = tmp;
-
-            hNode = second;
-            first = first.next.next;
-            second = second.next.next;
-        }
-        return retNode.next;
-    }
-=======
 import com.yany.model.ListNode;
 
 /**
@@ -68,7 +35,7 @@ public class _24_SwapNodesInPairs {
             tail = tail.next;
             head = tmp;
         }
-        if(head != null) {
+        if (head != null) {
             tail.next = head;
         }
 
@@ -108,6 +75,4 @@ public class _24_SwapNodesInPairs {
         return _tmp.next;
     }
 
-
->>>>>>> 0b4ac9d474c7c4be5abd0b598563c1b6a98dbeca
 }
