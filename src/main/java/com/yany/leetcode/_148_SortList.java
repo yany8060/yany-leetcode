@@ -17,6 +17,30 @@ public class _148_SortList {
         new _148_SortList().sortList(n1);
     }
 
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode nextTmp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTmp;
+        }
+        return prev;
+    }
+
+    public ListNode reverseList2(ListNode head) {
+        ListNode prev = new ListNode();
+        prev.next = head;
+        while (head.next != null) {
+            ListNode nextTmp = head.next;
+            head.next = nextTmp.next;
+            nextTmp.next = prev.next;
+            prev.next = nextTmp;
+        }
+        return prev.next;
+    }
+
     public ListNode sortList(ListNode head) {
         if (head == null) {
             return null;
@@ -55,8 +79,8 @@ public class _148_SortList {
         }
         ListNode tmp = slow.next;
         slow.next = null;
-        ListNode left = sortList(head);
-        ListNode right = sortList(tmp);
+        ListNode left = mergeSortList(head);
+        ListNode right = mergeSortList(tmp);
 
         ListNode h = new ListNode(0);
         ListNode res = h;

@@ -11,14 +11,13 @@ import java.util.List;
 public class _4_FindMedianSortedArrays {
 
     public static void main(String[] args) {
-        int[] nums1 = new int[]{1, 2};
-        int[] nums2 = new int[]{3, 4};
-        System.out.println(new _4_FindMedianSortedArrays().findMedianSortedArrays(nums1, nums2));
+        int[] nums1 = new int[]{};
+        int[] nums2 = new int[]{1};
+        System.out.println(new _4_FindMedianSortedArrays().findMedianSortedArrays2(nums1, nums2));
     }
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         List<Integer> num = new ArrayList<>();
-
         int i = 0, j = 0;
         while (i < nums1.length && j < nums2.length) {
             if (nums1[i] < nums2[j]) {
@@ -46,5 +45,44 @@ public class _4_FindMedianSortedArrays {
         }
 
 
+    }
+
+    public double findMedianSortedArrays2(int[] nums1, int[] nums2) {
+        int len = nums1.length + nums2.length;
+        int tmpl = 0, tmpr = 0;
+        int n = 0, i = 0, j = 0;
+        while (i < nums1.length || j < nums2.length) {
+            if (len % 2 == 0 && n == len / 2 + 1) {
+                return (tmpl + tmpr) / 2.0;
+            }
+            if (len % 2 != 0 && n == len / 2 + 1) {
+                return tmpr;
+            }
+
+
+            if (j >= nums2.length || (i < nums1.length && nums1[i] <= nums2[j])) {
+                tmpl = tmpr;
+                tmpr = nums1[i];
+                i++;
+                n++;
+                continue;
+            }
+            if (i >= nums1.length || (j < nums2.length && nums1[i] > nums2[j])) {
+                tmpl = tmpr;
+                tmpr = nums2[j];
+                j++;
+                n++;
+                continue;
+            }
+
+        }
+
+        if (len % 2 == 0 && n == len / 2 + 1) {
+            return (tmpl + tmpr) / 2.0;
+        }
+        if (len % 2 != 0 && n == len / 2 + 1) {
+            return tmpr;
+        }
+        return -1;
     }
 }

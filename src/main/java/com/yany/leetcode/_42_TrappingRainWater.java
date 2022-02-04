@@ -6,8 +6,37 @@ package com.yany.leetcode;
 public class _42_TrappingRainWater {
 
     public static void main(String[] args) {
-        int[] height = new int[]{2, 0, 2};
-        System.out.println(new _42_TrappingRainWater().trap(height));
+        int[] height = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+        System.out.println(new _42_TrappingRainWater().trap2(height));
+    }
+
+
+    public int trap2(int[] height) {
+        int i = 0, j = 0, result = 0;
+        while (i <= j && j < height.length) {
+            if (i < j && height[i] <= height[j]) {
+                result += calContaner(height, i, j);
+                i = j++;
+                continue;
+            }
+            j++;
+        }
+        return result;
+    }
+
+    public int calContaner(int[] height, int l, int r) {
+        int len = Math.min(height[l], height[r]);
+        System.out.println(len);
+
+        if (len == 0) {
+            return 0;
+        }
+        int result = 0;
+        while (l < r - 1) {
+            result += len - height[++l];
+            System.out.println(result);
+        }
+        return result;
     }
 
     public int trap(int[] height) {

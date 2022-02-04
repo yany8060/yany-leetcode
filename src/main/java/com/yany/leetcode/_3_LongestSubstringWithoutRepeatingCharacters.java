@@ -9,7 +9,7 @@ import java.util.Set;
 public class _3_LongestSubstringWithoutRepeatingCharacters {
 
     public static void main(String[] args) {
-        new _3_LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("xxxabcc");
+        new _3_LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring3("abcabcbb");
 
 //        LinkedList<String> linkedList = new LinkedList<>(Arrays.<String>asList("cc"));
 //        System.out.println(linkedList.getFirst());
@@ -73,6 +73,32 @@ public class _3_LongestSubstringWithoutRepeatingCharacters {
         }
         return max;
 
+    }
+
+    public int lengthOfLongestSubstring3(String s) {
+        int l = 0, r = 0, max = 0;
+        Set<Character> tmp = new HashSet<>();
+        char[] arr = s.toCharArray();
+        for (; r < arr.length; r++) {
+            if (!tmp.contains(arr[r])) {
+                tmp.add(arr[r]);
+                max = Math.max(max, r - l);
+                continue;
+            }
+
+            while (tmp.size() != 0) {
+                if (!tmp.contains(arr[r])) {
+                    break;
+                }
+                tmp.remove(arr[l]);
+                l++;
+            }
+            tmp.add(arr[r]);
+            max = Math.max(max, r - l);
+        }
+
+
+        return max;
     }
 
 }

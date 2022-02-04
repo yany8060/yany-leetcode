@@ -10,6 +10,7 @@ public class TestMain {
         String test = "adf-xxx-aa-ccc";
         System.out.println(test.substring(test.indexOf("-") + 1));
         System.out.println(test.substring(test.indexOf("d")));
+
     }
 
 }

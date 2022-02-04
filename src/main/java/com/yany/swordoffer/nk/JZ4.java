@@ -1,6 +1,6 @@
-package com.yany.swordoffer;
+package com.yany.swordoffer.nk;
 
-public class JZ1 {
+public class JZ4 {
     /**
      * 在一个二维数组array中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
      * [
@@ -19,22 +19,30 @@ public class JZ1 {
     public static void main(String[] args) {
         int[][] nums = new int[][]{{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
 
-        boolean result = new JZ1().Find(1, nums);
+        boolean result = new JZ4().Find(7, nums);
         System.out.println(result);
     }
 
 
     public boolean Find(int target, int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = array[i].length - 1; j >= 0; j--) {
-                if (target == array[i][j]) {
-                    return true;
-                }
-                if (target > array[i][j]) {
+        int n = array.length;
+        int m = array[0].length;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = m - 1; j >= 0; j--) {
+                int tmp = array[i][j];
+                if (target > tmp) {
                     break;
+                }
+                if (target < tmp) {
+                    m = j + 1;
+                }
+                if (target == tmp) {
+                    return true;
                 }
             }
         }
+
         return false;
     }
 

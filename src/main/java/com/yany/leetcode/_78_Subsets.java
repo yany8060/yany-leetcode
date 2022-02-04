@@ -11,7 +11,7 @@ import java.util.List;
 public class _78_Subsets {
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3};
-        new _78_Subsets().subsets(nums);
+        new _78_Subsets().subsets2(nums);
     }
 
     public List<List<Integer>> subsets(int[] nums) {
@@ -34,6 +34,26 @@ public class _78_Subsets {
             item.remove(item.size() - 1);
         }
 
+    }
+
+    public List<List<Integer>> subsets2(int[] nums) {
+        List<Integer> tmp = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(tmp);
+
+        for (int i = 0; i < nums.length; i++) {
+            List<List<Integer>> tmp1 = new ArrayList<>(result);
+            add(tmp1, nums[i]);
+            result.addAll(tmp1);
+        }
+        return result;
+
+    }
+
+    public void add(List<List<Integer>> lst, int num) {
+        for (int i = 0; i < lst.size(); i++) {
+            lst.get(i).add(num);
+        }
     }
 
 
