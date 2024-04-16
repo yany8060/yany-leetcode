@@ -58,5 +58,65 @@ public class _2_AddTwoNumbers {
         return d.next;
     }
 
+    // addTowNumbers2 2024-02-21
+    public static ListNode addTowNumbers2(ListNode l1, ListNode l2) {
+        if (l2 == null) {
+            return l1;
+        }
+        if (l1 == null) {
+            return l2;
+        }
+
+        ListNode head = new ListNode();
+
+        // 第一个节点
+        int v = l1.val + l2.val;
+        ListNode index = new ListNode();
+        index.val = v % 10;
+        int tmpValue = v / 10;
+
+        head.next = index;
+
+        l1 = l1.next;
+        l2 = l2.next;
+        while (l1 != null && l2 != null) {
+            v = l1.val + l2.val + tmpValue;
+            ListNode nd = new ListNode();
+            nd.val = v % 10;
+            tmpValue = v / 10;
+
+            index.next = nd;
+            index = index.next;
+            l1 = l1.next;
+            l2 = l2.next;
+        }
+
+        while (l1 != null) {
+            ListNode nd = new ListNode();
+            nd.val = (l1.val + tmpValue) % 10;
+            tmpValue = (l1.val + tmpValue) / 10;
+
+            index.next = nd;
+            index = index.next;
+            l1 = l1.next;
+        }
+
+        while (l2 != null) {
+            ListNode nd = new ListNode();
+            nd.val = (l2.val + tmpValue) % 10;
+            tmpValue = (l2.val + tmpValue) / 10;
+
+            index.next = nd;
+            index = index.next;
+            l2 = l2.next;
+        }
+
+        if (tmpValue > 0) {
+            index.next = new ListNode(tmpValue);
+        }
+
+        return head.next;
+    }
+
 
 }

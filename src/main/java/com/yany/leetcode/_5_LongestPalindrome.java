@@ -11,7 +11,7 @@ package com.yany.leetcode;
  */
 public class _5_LongestPalindrome {
     public static void main(String[] args) {
-        System.out.println(new _5_LongestPalindrome().longestPalindrome4("aaaa"));
+        System.out.println(new _5_LongestPalindrome().longestPalindrome5("babab"));
 
 
         String s = "abcdefg";
@@ -99,5 +99,22 @@ public class _5_LongestPalindrome {
         return tmp;
     }
 
+    public String longestPalindrome5(String s) {
+        int n = s.length();
+        int max = 0;
+        String result = "";
+        boolean[][] dp = new boolean[n][n];
+        for (int i=0; i < n; i++) {
+            for(int j=i+1; j<n; j++) {
+                dp[i][j] = s.charAt(i) == s.charAt(j) && (i-j<3 || dp[i+1][j-1]);
+                if (dp[i][j] && max < i - j + 1) {
+                    max = i - j + 1;
+                    result = s.substring(i, j+1);
+                }
+            }
+        }
+
+        return result;
+    }
 
 }
